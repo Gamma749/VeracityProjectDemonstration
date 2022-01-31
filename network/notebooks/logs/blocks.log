@@ -1,0 +1,344 @@
+query_hash: "996b5f070818c3eb2839ce794da8fb9db27c81dbe04da68ed996d72fd4f08cb4"
+block_response {
+  block {
+    block_v1 {
+      payload {
+        transactions {
+          payload {
+            reduced_payload {
+              commands {
+                add_peer {
+                  peer {
+                    address: "172.29.101.121:10001"
+                    peer_key: "bddd58404d1315e0eb27902c5d7c8eb0602c16238f005773df406bc191308929"
+                  }
+                }
+              }
+              commands {
+                add_peer {
+                  peer {
+                    address: "172.29.101.122:10002"
+                    peer_key: "3ad86d45d8b8e89298d49185b3418fc14a5b0ecbf3b26cb0a592c8ba6b8cae8e"
+                  }
+                }
+              }
+              commands {
+                add_peer {
+                  peer {
+                    address: "172.29.101.123:10003"
+                    peer_key: "6870dec85c32ba2d2c042c511b5a4ea4003823fd1ef819231becc7544331d5d3"
+                  }
+                }
+              }
+              commands {
+                add_peer {
+                  peer {
+                    address: "172.29.101.124:10004"
+                    peer_key: "55b77d9e7ecb1cad531555da10c28a475363cbdd0802b7951e85419014143ecc"
+                  }
+                }
+              }
+              commands {
+                create_role {
+                  role_name: "admin"
+                  permissions: can_add_peer
+                  permissions: can_add_signatory
+                  permissions: can_create_account
+                  permissions: can_create_domain
+                  permissions: can_create_asset
+                  permissions: can_create_role
+                  permissions: can_get_all_acc_ast
+                  permissions: can_get_all_acc_ast_txs
+                  permissions: can_get_all_acc_detail
+                  permissions: can_get_all_acc_txs
+                  permissions: can_get_all_accounts
+                  permissions: can_get_all_signatories
+                  permissions: can_get_all_txs
+                  permissions: can_get_blocks
+                  permissions: can_get_roles
+                  permissions: can_read_assets
+                  permissions: can_remove_signatory
+                  permissions: can_set_quorum
+                }
+              }
+              commands {
+                create_domain {
+                  domain_id: "admin"
+                  default_role: "admin"
+                }
+              }
+              commands {
+                create_account {
+                  account_name: "admin"
+                  domain_id: "admin"
+                  public_key: "313a07e6384776ed95447710d15e59148473ccfc052a681317a72a69f2a49910"
+                }
+              }
+              quorum: 1
+            }
+          }
+        }
+        tx_number: 1
+        height: 1
+        prev_block_hash: "0000000000000000000000000000000000000000000000000000000000000000"
+      }
+    }
+  }
+}
+
+
+query_hash: "0dcfc1a2dddee682af2892be69850250ebffcd633d842a0a7aeaa9664dcd8b37"
+block_response {
+  block {
+    block_v1 {
+      payload {
+        transactions {
+          payload {
+            reduced_payload {
+              commands {
+                create_role {
+                  role_name: "hash_creator"
+                  permissions: can_create_asset
+                  permissions: can_read_assets
+                }
+              }
+              commands {
+                create_role {
+                  role_name: "null_role"
+                }
+              }
+              commands {
+                create_domain {
+                  domain_id: "hashing"
+                  default_role: "hash_creator"
+                }
+              }
+              creator_account_id: "admin@admin"
+              created_time: 1643664441732
+              quorum: 1
+            }
+          }
+          signatures {
+            public_key: "313a07e6384776ed95447710d15e59148473ccfc052a681317a72a69f2a49910"
+            signature: "3df741e012ba4ba3f77f784147d61cddaff3adacb98e595944655e6b848dae2ec186eadde719d078a5451dbd0f871580c926a730a9ff96ba7d5d874e6017a805"
+          }
+        }
+        height: 2
+        prev_block_hash: "edb8b76962c814ad16a2e285a7238b496d883d8bdd5c91c7fd010808437a43ce"
+        created_time: 1643664444452
+      }
+      signatures {
+        public_key: "bddd58404d1315e0eb27902c5d7c8eb0602c16238f005773df406bc191308929"
+        signature: "ef3e9b0c924673545594ae42b64bc23a8d34d5965f3149533858e938d148ba71d0fe10eafc97451d0a9fd19932e8450588c93b1d2dc12e31e17a0bfb2230bf0f"
+      }
+      signatures {
+        public_key: "6870dec85c32ba2d2c042c511b5a4ea4003823fd1ef819231becc7544331d5d3"
+        signature: "29a1d34fa50d5f1f313ca971fe2d8326d3daa57163db9aec5d54271ebb28f45071d7270c987a4f6a1f1b7e9d86c8ddb7c2fbeefebd00b2cefbf81a3294c56b01"
+      }
+      signatures {
+        public_key: "3ad86d45d8b8e89298d49185b3418fc14a5b0ecbf3b26cb0a592c8ba6b8cae8e"
+        signature: "d5bdc5f358184592a8025c506b29cf4c0cb07d2f0cf3fe18aa4adab22a465694110816a1318e0824a193c4518227e42f72518c2991dc020b985d06d337e69007"
+      }
+    }
+  }
+}
+
+
+query_hash: "8c45cd4fc8d427609c1d1b442bc8e22597a51560038fe77bbe99d98fe4c8121c"
+block_response {
+  block {
+    block_v1 {
+      payload {
+        transactions {
+          payload {
+            reduced_payload {
+              commands {
+                create_account {
+                  account_name: "swipluser"
+                  domain_id: "hashing"
+                  public_key: "c0c4404aef6dd6546b1341f5df8495eeb34988d8a4cb424ba668e0c2b2d6ed39"
+                }
+              }
+              creator_account_id: "admin@admin"
+              created_time: 1643664444507
+              quorum: 1
+            }
+          }
+          signatures {
+            public_key: "313a07e6384776ed95447710d15e59148473ccfc052a681317a72a69f2a49910"
+            signature: "3ee351ac5b7e7e9a7c9b2099095b57986ad9f8dfed5b028547e2dbb616ad1a765065677e0bf90844cdc020d5bc48671210856d056352d9ef5a789ce1df531b0f"
+          }
+        }
+        height: 3
+        prev_block_hash: "8bad58260f356b28f818373def558fabea1437b18d8b141c418560f84e5a3be8"
+        created_time: 1643664447503
+      }
+      signatures {
+        public_key: "bddd58404d1315e0eb27902c5d7c8eb0602c16238f005773df406bc191308929"
+        signature: "0f36a176d0212aba86cafaf26e656d3b9d68098a1d045713ab890244805243099aa8afee3170ef3ec70277765a4e7b2e2d8bf71475656f1428192b3d24928507"
+      }
+      signatures {
+        public_key: "6870dec85c32ba2d2c042c511b5a4ea4003823fd1ef819231becc7544331d5d3"
+        signature: "972d472fbb415846acbae7308a5701a956ae1e5d905b85317960e1339a13be7064e4ad1d6f09dba9f9b85034ffc595038fe57c8c3c4dab408490f40b56ce2507"
+      }
+      signatures {
+        public_key: "55b77d9e7ecb1cad531555da10c28a475363cbdd0802b7951e85419014143ecc"
+        signature: "1cc6f5c061aa742b002a63b97470c35b9624579b29d0089a6e713fddce48ea447a3a35efe9ae4c53163e19edcc4608839e01fcb820ebd80ec06f5017805d0a00"
+      }
+    }
+  }
+}
+
+
+query_hash: "74ff0eb598d0bde70ce19d5e48fe4c4d2f63603940adb60fa14087e7954611a0"
+block_response {
+  block {
+    block_v1 {
+      payload {
+        height: 4
+        prev_block_hash: "022bdecae0c33b2d12050c7b5133ae5af3a76b502f6089d6a4483109b3048269"
+        created_time: 1643664459560
+        rejected_transactions_hashes: "5595963d9c63dfe64c8023d1f07f6688502958681043891df58c974bb38309cf"
+      }
+      signatures {
+        public_key: "bddd58404d1315e0eb27902c5d7c8eb0602c16238f005773df406bc191308929"
+        signature: "7d107237b983f722bc71016136df398416c962f2af101a764636a07d93d981079913cc542e7dcd12a5a0692b59e5b5aabc37e23efe46dee2ba466b6b652b4305"
+      }
+      signatures {
+        public_key: "6870dec85c32ba2d2c042c511b5a4ea4003823fd1ef819231becc7544331d5d3"
+        signature: "26e9376955edc0e1285d007e0a22e6c29fd070648c630e087ec7279890b23c0b54340773124d927a9f0dc5ad033c5370fed9bbbf13451afaca7a13e2f96be101"
+      }
+      signatures {
+        public_key: "3ad86d45d8b8e89298d49185b3418fc14a5b0ecbf3b26cb0a592c8ba6b8cae8e"
+        signature: "9bc834793f33b6ba6dcb1b27094cf5a84604edd361f89994e937cf23a889e5a24ce122a216a43d1c92cc7b2f53c77cc05beff3a55f0c6c7f4ca4746b051a980f"
+      }
+      signatures {
+        public_key: "55b77d9e7ecb1cad531555da10c28a475363cbdd0802b7951e85419014143ecc"
+        signature: "c7d0614242d3e12453a8531fdd47ec30b1ab2cb8dc2b1cb9c95b0ecfecccd2c346b2bd01e79b3d16dec6e67308f58655d492234851e89ce1c58a96a6b31a410b"
+      }
+    }
+  }
+}
+
+
+query_hash: "505468606f1fa288eb6b09145942bcab6f79dc80e3c13b2bb3bd40b2f041f531"
+block_response {
+  block {
+    block_v1 {
+      payload {
+        transactions {
+          payload {
+            reduced_payload {
+              commands {
+                create_domain {
+                  domain_id: "swipluser-foo-hash"
+                  default_role: "null_role"
+                }
+              }
+              creator_account_id: "admin@admin"
+              created_time: 1643664460781
+              quorum: 1
+            }
+          }
+          signatures {
+            public_key: "313a07e6384776ed95447710d15e59148473ccfc052a681317a72a69f2a49910"
+            signature: "1422536c291a8553fc8837582d6229ead56f9857d1566b0181897666f7ba793e91a170b88f7ee40da1e149c885867be1533300815d1837e384d6a2d020f1b708"
+          }
+        }
+        height: 5
+        prev_block_hash: "aec4131f76b3344a248da5c4ef936e2e5c6447cc348a04a5cfc2edb85326e460"
+        created_time: 1643664462613
+      }
+      signatures {
+        public_key: "bddd58404d1315e0eb27902c5d7c8eb0602c16238f005773df406bc191308929"
+        signature: "31e7b02b69f48fd76f81875a03bfc6b7cabbd2768df9bc967937780933212a8eb8d082abfa87646d87f888438d14b887a01a98398ded7629ad780001c3026c0d"
+      }
+      signatures {
+        public_key: "3ad86d45d8b8e89298d49185b3418fc14a5b0ecbf3b26cb0a592c8ba6b8cae8e"
+        signature: "ae87537db27f4040f2176aaaf7f99f6416a9ae52b6f98975233368505f410be86982917c85170abf4baa64e7b6a0aa791dfdf9356f1fc23b42b85597fba28202"
+      }
+      signatures {
+        public_key: "55b77d9e7ecb1cad531555da10c28a475363cbdd0802b7951e85419014143ecc"
+        signature: "7d2b560f8d26bc9da198aa5bb0adb5ac1b03dbd2e0e27ee61cb2663575b7e850fd68020b99d71a98d57cfe36c58d91343cfc319212f33ec860e09444ec08520d"
+      }
+      signatures {
+        public_key: "6870dec85c32ba2d2c042c511b5a4ea4003823fd1ef819231becc7544331d5d3"
+        signature: "52c75c660ab980b90743f4ca1855c3c7d9eac7a37584e68f87d15f842a8b244f3fbbe870374c1feeb122cfef6054a24fd6ff871dabbb13e27b6618d8133f9c06"
+      }
+    }
+  }
+}
+
+
+query_hash: "a474b36aec0496b0312788e6a7cc48aabee7dc95820390a259a430ff6cf00caf"
+block_response {
+  block {
+    block_v1 {
+      payload {
+        transactions {
+          payload {
+            reduced_payload {
+              commands {
+                create_asset {
+                  asset_name: "074b31f5019c5cb33ba7c725caac6f25"
+                  domain_id: "swipluser-foo-hash"
+                }
+              }
+              creator_account_id: "swipluser@hashing"
+              created_time: 1643664462670
+              quorum: 1
+            }
+          }
+          signatures {
+            public_key: "c0c4404aef6dd6546b1341f5df8495eeb34988d8a4cb424ba668e0c2b2d6ed39"
+            signature: "9c8d4a59320bb5bf0516b5814e2ca6450e67195c28b4f67ba18ba18d0e483277f85d7e006facd0886f44921cb391d0648a690be4d83460167a78b933d16c4a00"
+          }
+        }
+        height: 6
+        prev_block_hash: "1fdd9040cc880c94982c0a024aca4040d81d6e903abe826b7da70536ade00dd1"
+        created_time: 1643664465663
+      }
+      signatures {
+        public_key: "bddd58404d1315e0eb27902c5d7c8eb0602c16238f005773df406bc191308929"
+        signature: "9332d46d7602c2fe49b8d712b5e734d6cf61da60b723c684c89bf159d2de084c69ec091296a6c9eedfb03f90b8bae21bb2f66f6a94905b8cc31e9efa7bc60100"
+      }
+      signatures {
+        public_key: "55b77d9e7ecb1cad531555da10c28a475363cbdd0802b7951e85419014143ecc"
+        signature: "1be559dac02031ffaf9c2a0bb9a5ccbfdf5fb38be62683cb153fd1ad64c4e0db2c690efff565f0f4f14b74273e47a89a7d57d4a9381f21ee9e941b6940425708"
+      }
+      signatures {
+        public_key: "3ad86d45d8b8e89298d49185b3418fc14a5b0ecbf3b26cb0a592c8ba6b8cae8e"
+        signature: "8160bd3c14ecf14e07c06ee78f20941c74386c4c9422408a439753c4b5b1d6cbbbee81eba6c61a5c08175ddfb4fe10761de4dc78f548f188d2aec165d934dd06"
+      }
+    }
+  }
+}
+
+
+query_hash: "2406e0dccf52e2f844b096f837a0d03dcba001fa5f6cd2dbd5e5855af9297c5f"
+block_response {
+  block {
+    block_v1 {
+      payload {
+        height: 7
+        prev_block_hash: "6ab0b70a20146f7bbe2bd54370c597e5d5ac887846543891fca8a6d2d57955fe"
+        created_time: 1643666380791
+        rejected_transactions_hashes: "1c8a4c882135facb1f16bb285dddf4265d4095e98f6907ce0de8c3d7219149fa"
+      }
+      signatures {
+        public_key: "bddd58404d1315e0eb27902c5d7c8eb0602c16238f005773df406bc191308929"
+        signature: "d9cee41989efe58bf2137d04692c8b05ce9ecf42afad4a7350bd61e5be69c53f33f997bc64ec5c2fd675fc954b4ec8ae03e1006a2be337514dec9e8e0905ee04"
+      }
+      signatures {
+        public_key: "3ad86d45d8b8e89298d49185b3418fc14a5b0ecbf3b26cb0a592c8ba6b8cae8e"
+        signature: "6258f2e9016b60f7caf51693909b5170c11ee3480ef4588346e53d5154e303fc94859fbb73881105314b2e82190f6dc5aafa4783815bcedcc1ca5817aed85909"
+      }
+      signatures {
+        public_key: "55b77d9e7ecb1cad531555da10c28a475363cbdd0802b7951e85419014143ecc"
+        signature: "fac50d1bd7b2d87e3af0a94e13b44fc854424dd1998bd3b943d3d4ec5d2daa75fa50ce135d91d98d1c08a0c4c55c73a6bf50c1ff7ce9aaedce1ac8063f0f160b"
+      }
+    }
+  }
+}
+
+
