@@ -1,0 +1,673 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.10.0" />
+<title>IrohaUtils API documentation</title>
+<meta name="description" content="" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>IrohaUtils</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">import os
+import binascii
+import logging
+from pathlib import Path
+from google.protobuf.symbol_database import Default
+from iroha import IrohaCrypto, Iroha, IrohaGrpc, primitive_pb2
+
+if __name__ == &#34;__main__&#34;:
+    logging.basicConfig(level=logging.DEBUG)
+
+class bcolors:
+    &#34;&#34;&#34;
+    A class to add colours to command line outputs. Useful for readability.
+
+    Make sure to end your string with the ENDC colour, to avoid errors!
+    &#34;&#34;&#34;
+    HEADER = &#39;\033[95m&#39;
+    OKBLUE = &#39;\033[94m&#39;
+    OKCYAN = &#39;\033[96m&#39;
+    OKGREEN = &#39;\033[92m&#39;
+    WARNING = &#39;\033[93m&#39;
+    FAIL = &#39;\033[91m&#39;
+    ENDC = &#39;\033[0m&#39;
+    BOLD = &#39;\033[1m&#39;
+    UNDERLINE = &#39;\033[4m&#39;
+
+
+# Iroha peer 1
+IROHA_HOST_ADDR_1 = os.getenv(&#39;IROHA_HOST_ADDR_1&#39;, &#39;172.29.101.121&#39;)
+IROHA_PORT_1 = os.getenv(&#39;IROHA_PORT_1&#39;, &#39;50051&#39;)
+# Iroha peer 2
+IROHA_HOST_ADDR_2 = os.getenv(&#39;IROHA_HOST_ADDR_2&#39;, &#39;172.29.101.122&#39;)
+IROHA_PORT_2 = os.getenv(&#39;IROHA_PORT_2&#39;, &#39;50052&#39;)
+# Iroha peer 3
+IROHA_HOST_ADDR_3 = os.getenv(&#39;IROHA_HOST_ADDR_3&#39;, &#39;172.29.101.123&#39;)
+IROHA_PORT_3 = os.getenv(&#39;IROHA_PORT_3&#39;, &#39;50053&#39;)
+# Iroha peer 4
+IROHA_HOST_ADDR_4 = os.getenv(&#39;IROHA_HOST_ADDR_3&#39;, &#39;172.29.101.124&#39;)
+IROHA_PORT_4 = os.getenv(&#39;IROHA_PORT_4&#39;, &#39;50054&#39;)
+
+ADMIN_ACCOUNT_ID = os.getenv(&#39;ADMIN_ACCOUNT_ID&#39;, &#39;admin@admin&#39;)
+ADMIN_PRIVATE_KEY = os.getenv(
+    &#39;ADMIN_PRIVATE_KEY&#39;, &#39;f101537e319568c765b2cc89698325604991dca57b9716b58016b253506cab70&#39;)
+iroha_admin = Iroha(ADMIN_ACCOUNT_ID)
+
+admin = {
+    &#34;id&#34;: &#34;admin@admin&#34;,
+    &#34;name&#34;: &#34;admin&#34;,
+    &#34;domain&#34;: &#34;admin&#34;,
+    &#34;public_key&#34;: IrohaCrypto.derive_public_key(ADMIN_PRIVATE_KEY),
+    &#34;private_key&#34;: ADMIN_PRIVATE_KEY,
+    &#34;iroha&#34;: iroha_admin
+}
+
+
+net_1 = IrohaGrpc(&#39;{}:{}&#39;.format(IROHA_HOST_ADDR_1, IROHA_PORT_1), timeout=10)
+net_2 = IrohaGrpc(&#39;{}:{}&#39;.format(IROHA_HOST_ADDR_2, IROHA_PORT_2), timeout=10)
+net_3 = IrohaGrpc(&#39;{}:{}&#39;.format(IROHA_HOST_ADDR_3, IROHA_PORT_3), timeout=10)
+net_4 = IrohaGrpc(&#39;{}:{}&#39;.format(IROHA_HOST_ADDR_4, IROHA_PORT_4), timeout=10)
+
+
+def trace(func):
+    &#34;&#34;&#34;
+    A decorator for tracing methods&#39; begin/end execution points. Used for debugging
+    &#34;&#34;&#34;
+
+    def tracer(*args, **kwargs):
+        name = func.__name__
+        logging.debug(f&#39;{bcolors.HEADER}==&gt; Entering &#34;{name}&#34;{bcolors.ENDC}&#39;)
+        result = func(*args, **kwargs)
+        logging.debug(f&#39;{bcolors.HEADER}==&gt; Leaving &#34;{name}&#34;{bcolors.ENDC}&#39;)
+        return result
+
+    return tracer
+
+
+# @trace
+def send_transaction(transaction, connection=net_1, verbose=False):
+    &#34;&#34;&#34;Send a transaction across a network to a peer and return the final status
+    Verbose mode intended mainly for manual transaction sending and testing
+    This method is blocking, waiting for a final status for the transaction
+
+    Args:
+        transaction (Iroha.transaction): The signed transaction to send to a peer
+        connection (IrohaGrpc): The Grpc connection to send the transaction across
+        verbose (bool): A boolean to print the status stream to stdout
+
+    Returns:
+        Iroha Transaction Status: The final transaction status received
+    &#34;&#34;&#34;
+
+    hex_hash = binascii.hexlify(IrohaCrypto.hash(transaction))
+    logging.debug(transaction)
+    logging.debug(&#39;Transaction hash = {}, creator = {}&#39;.format(
+        hex_hash, transaction.payload.reduced_payload.creator_account_id))
+    connection.send_tx(transaction)
+    last_status = None
+    for status in connection.tx_status_stream(transaction):
+        if verbose: print(status)
+        logging.debug(status)
+        last_status = status
+    return last_status
+
+# @trace
+def send_batch(transactions, connection=net_1, verbose=False):
+    &#34;&#34;&#34;Send a batch of transactions across a connection, all at once
+
+    Args:
+        transactions (list of Iroha.transaction): The signed transactions to send to a peer
+        connection (IrohaGrpc): The Grpc connection to send the transactions across
+        verbose (bool): A boolean to print the status stream to stdout
+
+    Returns:
+        Iroha Transaction Statuses: List of the final transaction status received, for each transaction in batch
+    &#34;&#34;&#34;
+
+    connection.send_txs(transactions)
+    last_status_list = []
+    for tx in transactions:
+        hex_hash = binascii.hexlify(IrohaCrypto.hash(tx))
+        logging.debug(&#39;Transaction hash = {}, creator = {}&#39;.format(
+            hex_hash, tx.payload.reduced_payload.creator_account_id))
+        for status in connection.tx_status_stream(tx):
+            if verbose: print(status)
+            last_status = status
+        last_status_list.append(last_status)
+    return last_status_list
+
+# @trace
+def get_block(block_number, connection=net_1):
+    &#34;&#34;&#34;Get the block at height block_number from the node specified by connection 
+
+    Args:
+        block_number (int): The block number to get. Must be &gt;0 and less than the maximum height
+        connection (IrohaGrpc): The connection to a node to get blocks from
+
+    Returns:
+        JSON: the JSON description of the block requested
+    
+    Throws:
+        Exception if block height is invalid, or if connection is invalid
+    &#34;&#34;&#34;
+
+    query = admin[&#34;iroha&#34;].query(&#34;GetBlock&#34;, height=block_number)
+    query = IrohaCrypto.sign_query(query, admin[&#34;private_key&#34;])
+    block = connection.send_query(query)
+
+    return block
+
+# @trace
+def get_all_blocks(connection=net_1):
+    &#34;&#34;&#34;Get all blocks from a connection
+
+    Args:
+        connection (IrohaGrpc): The connection to a node to get blocks from
+
+    Returns:
+        list of JSON strings: A list of every block in JSON format from a node 
+    &#34;&#34;&#34;
+
+    current_height = 1
+    current_block = get_block(current_height, connection)
+    block_json = []
+
+    while (current_block := get_block(current_height, connection)).error_response.error_code == 0:
+        logging.debug(f&#34;SUCCESSFULLY GOT BLOCK {current_height}&#34;)
+        block_json.append(current_block)
+        current_height += 1
+        logging.debug(f&#34;GETTING BLOCK {current_height}&#34;)
+    logging.debug(f&#34;END OF CHAIN REACHED&#34;)
+    return block_json
+
+# @trace
+def log_all_blocks(log_name, logs_directory=&#34;logs&#34;, connection=net_1):
+    &#34;&#34;&#34;Get all blocks from a node and write them to a log file in JSON format
+
+    Args:
+        connection (IrohaGrpc): The connection to a node to get blocks from
+        log_name (String): Name of file to write logs to
+        logs_directory (String, optional): Name of directory (child of current directory) to place logs into
+            Created if not currently created. Defaults to logs
+    &#34;&#34;&#34;
+
+    path = Path(logs_directory + &#34;/&#34; + log_name)
+    if not os.path.exists(os.path.dirname(path)):
+        os.makedirs(os.path.dirname(path))
+
+    block_json = get_all_blocks(connection)
+
+    with open(path, &#34;w+&#34;) as f:
+        for block in block_json:
+            f.write(str(block)+&#34;\n\n&#34;)
+
+def new_user(user_name, domain_name):
+    &#34;&#34;&#34;
+    Create the data for a new user and return it
+    Includes public and private keys
+
+    Args:
+        user_name (String): The name of the new user
+        domain_name (String): The name of the domain the user is to be placed in
+
+    Returns:
+        Dictionary : A key-value store of user_id, public and private keys
+    &#34;&#34;&#34;
+
+    priv_key = IrohaCrypto.private_key()
+    pub_key = IrohaCrypto.derive_public_key(priv_key)
+    id = user_name + &#34;@&#34; + domain_name
+
+    return {
+        &#34;id&#34;: id,
+        &#34;name&#34;: user_name,
+        &#34;domain&#34;: domain_name,
+        &#34;public_key&#34;: pub_key,
+        &#34;private_key&#34;: priv_key,
+        &#34;iroha&#34;: Iroha(id)
+    }
+
+import IrohaHashCustodian</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-functions">Functions</h2>
+<dl>
+<dt id="IrohaUtils.get_all_blocks"><code class="name flex">
+<span>def <span class="ident">get_all_blocks</span></span>(<span>connection=&lt;iroha.iroha.IrohaGrpc object&gt;)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Get all blocks from a connection</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>connection</code></strong> :&ensp;<code>IrohaGrpc</code></dt>
+<dd>The connection to a node to get blocks from</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>list</code> of <code>JSON strings</code></dt>
+<dd>A list of every block in JSON format from a node</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_all_blocks(connection=net_1):
+    &#34;&#34;&#34;Get all blocks from a connection
+
+    Args:
+        connection (IrohaGrpc): The connection to a node to get blocks from
+
+    Returns:
+        list of JSON strings: A list of every block in JSON format from a node 
+    &#34;&#34;&#34;
+
+    current_height = 1
+    current_block = get_block(current_height, connection)
+    block_json = []
+
+    while (current_block := get_block(current_height, connection)).error_response.error_code == 0:
+        logging.debug(f&#34;SUCCESSFULLY GOT BLOCK {current_height}&#34;)
+        block_json.append(current_block)
+        current_height += 1
+        logging.debug(f&#34;GETTING BLOCK {current_height}&#34;)
+    logging.debug(f&#34;END OF CHAIN REACHED&#34;)
+    return block_json</code></pre>
+</details>
+</dd>
+<dt id="IrohaUtils.get_block"><code class="name flex">
+<span>def <span class="ident">get_block</span></span>(<span>block_number, connection=&lt;iroha.iroha.IrohaGrpc object&gt;)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Get the block at height block_number from the node specified by connection </p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>block_number</code></strong> :&ensp;<code>int</code></dt>
+<dd>The block number to get. Must be &gt;0 and less than the maximum height</dd>
+<dt><strong><code>connection</code></strong> :&ensp;<code>IrohaGrpc</code></dt>
+<dd>The connection to a node to get blocks from</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>JSON</code></dt>
+<dd>the JSON description of the block requested</dd>
+</dl>
+<h2 id="throws">Throws</h2>
+<p>Exception if block height is invalid, or if connection is invalid</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_block(block_number, connection=net_1):
+    &#34;&#34;&#34;Get the block at height block_number from the node specified by connection 
+
+    Args:
+        block_number (int): The block number to get. Must be &gt;0 and less than the maximum height
+        connection (IrohaGrpc): The connection to a node to get blocks from
+
+    Returns:
+        JSON: the JSON description of the block requested
+    
+    Throws:
+        Exception if block height is invalid, or if connection is invalid
+    &#34;&#34;&#34;
+
+    query = admin[&#34;iroha&#34;].query(&#34;GetBlock&#34;, height=block_number)
+    query = IrohaCrypto.sign_query(query, admin[&#34;private_key&#34;])
+    block = connection.send_query(query)
+
+    return block</code></pre>
+</details>
+</dd>
+<dt id="IrohaUtils.log_all_blocks"><code class="name flex">
+<span>def <span class="ident">log_all_blocks</span></span>(<span>log_name, logs_directory='logs', connection=&lt;iroha.iroha.IrohaGrpc object&gt;)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Get all blocks from a node and write them to a log file in JSON format</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>connection</code></strong> :&ensp;<code>IrohaGrpc</code></dt>
+<dd>The connection to a node to get blocks from</dd>
+<dt><strong><code>log_name</code></strong> :&ensp;<code>String</code></dt>
+<dd>Name of file to write logs to</dd>
+<dt><strong><code>logs_directory</code></strong> :&ensp;<code>String</code>, optional</dt>
+<dd>Name of directory (child of current directory) to place logs into
+Created if not currently created. Defaults to logs</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def log_all_blocks(log_name, logs_directory=&#34;logs&#34;, connection=net_1):
+    &#34;&#34;&#34;Get all blocks from a node and write them to a log file in JSON format
+
+    Args:
+        connection (IrohaGrpc): The connection to a node to get blocks from
+        log_name (String): Name of file to write logs to
+        logs_directory (String, optional): Name of directory (child of current directory) to place logs into
+            Created if not currently created. Defaults to logs
+    &#34;&#34;&#34;
+
+    path = Path(logs_directory + &#34;/&#34; + log_name)
+    if not os.path.exists(os.path.dirname(path)):
+        os.makedirs(os.path.dirname(path))
+
+    block_json = get_all_blocks(connection)
+
+    with open(path, &#34;w+&#34;) as f:
+        for block in block_json:
+            f.write(str(block)+&#34;\n\n&#34;)</code></pre>
+</details>
+</dd>
+<dt id="IrohaUtils.new_user"><code class="name flex">
+<span>def <span class="ident">new_user</span></span>(<span>user_name, domain_name)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Create the data for a new user and return it
+Includes public and private keys</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>user_name</code></strong> :&ensp;<code>String</code></dt>
+<dd>The name of the new user</dd>
+<dt><strong><code>domain_name</code></strong> :&ensp;<code>String</code></dt>
+<dd>The name of the domain the user is to be placed in</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>Dictionary </code></dt>
+<dd>A key-value store of user_id, public and private keys</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def new_user(user_name, domain_name):
+    &#34;&#34;&#34;
+    Create the data for a new user and return it
+    Includes public and private keys
+
+    Args:
+        user_name (String): The name of the new user
+        domain_name (String): The name of the domain the user is to be placed in
+
+    Returns:
+        Dictionary : A key-value store of user_id, public and private keys
+    &#34;&#34;&#34;
+
+    priv_key = IrohaCrypto.private_key()
+    pub_key = IrohaCrypto.derive_public_key(priv_key)
+    id = user_name + &#34;@&#34; + domain_name
+
+    return {
+        &#34;id&#34;: id,
+        &#34;name&#34;: user_name,
+        &#34;domain&#34;: domain_name,
+        &#34;public_key&#34;: pub_key,
+        &#34;private_key&#34;: priv_key,
+        &#34;iroha&#34;: Iroha(id)
+    }</code></pre>
+</details>
+</dd>
+<dt id="IrohaUtils.send_batch"><code class="name flex">
+<span>def <span class="ident">send_batch</span></span>(<span>transactions, connection=&lt;iroha.iroha.IrohaGrpc object&gt;, verbose=False)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Send a batch of transactions across a connection, all at once</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>transactions</code></strong> :&ensp;<code>list</code> of <code>Iroha.transaction</code></dt>
+<dd>The signed transactions to send to a peer</dd>
+<dt><strong><code>connection</code></strong> :&ensp;<code>IrohaGrpc</code></dt>
+<dd>The Grpc connection to send the transactions across</dd>
+<dt><strong><code>verbose</code></strong> :&ensp;<code>bool</code></dt>
+<dd>A boolean to print the status stream to stdout</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>Iroha Transaction Statuses</code></dt>
+<dd>List of the final transaction status received, for each transaction in batch</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def send_batch(transactions, connection=net_1, verbose=False):
+    &#34;&#34;&#34;Send a batch of transactions across a connection, all at once
+
+    Args:
+        transactions (list of Iroha.transaction): The signed transactions to send to a peer
+        connection (IrohaGrpc): The Grpc connection to send the transactions across
+        verbose (bool): A boolean to print the status stream to stdout
+
+    Returns:
+        Iroha Transaction Statuses: List of the final transaction status received, for each transaction in batch
+    &#34;&#34;&#34;
+
+    connection.send_txs(transactions)
+    last_status_list = []
+    for tx in transactions:
+        hex_hash = binascii.hexlify(IrohaCrypto.hash(tx))
+        logging.debug(&#39;Transaction hash = {}, creator = {}&#39;.format(
+            hex_hash, tx.payload.reduced_payload.creator_account_id))
+        for status in connection.tx_status_stream(tx):
+            if verbose: print(status)
+            last_status = status
+        last_status_list.append(last_status)
+    return last_status_list</code></pre>
+</details>
+</dd>
+<dt id="IrohaUtils.send_transaction"><code class="name flex">
+<span>def <span class="ident">send_transaction</span></span>(<span>transaction, connection=&lt;iroha.iroha.IrohaGrpc object&gt;, verbose=False)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Send a transaction across a network to a peer and return the final status
+Verbose mode intended mainly for manual transaction sending and testing
+This method is blocking, waiting for a final status for the transaction</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>transaction</code></strong> :&ensp;<code>Iroha.transaction</code></dt>
+<dd>The signed transaction to send to a peer</dd>
+<dt><strong><code>connection</code></strong> :&ensp;<code>IrohaGrpc</code></dt>
+<dd>The Grpc connection to send the transaction across</dd>
+<dt><strong><code>verbose</code></strong> :&ensp;<code>bool</code></dt>
+<dd>A boolean to print the status stream to stdout</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>Iroha Transaction Status</code></dt>
+<dd>The final transaction status received</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def send_transaction(transaction, connection=net_1, verbose=False):
+    &#34;&#34;&#34;Send a transaction across a network to a peer and return the final status
+    Verbose mode intended mainly for manual transaction sending and testing
+    This method is blocking, waiting for a final status for the transaction
+
+    Args:
+        transaction (Iroha.transaction): The signed transaction to send to a peer
+        connection (IrohaGrpc): The Grpc connection to send the transaction across
+        verbose (bool): A boolean to print the status stream to stdout
+
+    Returns:
+        Iroha Transaction Status: The final transaction status received
+    &#34;&#34;&#34;
+
+    hex_hash = binascii.hexlify(IrohaCrypto.hash(transaction))
+    logging.debug(transaction)
+    logging.debug(&#39;Transaction hash = {}, creator = {}&#39;.format(
+        hex_hash, transaction.payload.reduced_payload.creator_account_id))
+    connection.send_tx(transaction)
+    last_status = None
+    for status in connection.tx_status_stream(transaction):
+        if verbose: print(status)
+        logging.debug(status)
+        last_status = status
+    return last_status</code></pre>
+</details>
+</dd>
+<dt id="IrohaUtils.trace"><code class="name flex">
+<span>def <span class="ident">trace</span></span>(<span>func)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>A decorator for tracing methods' begin/end execution points. Used for debugging</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def trace(func):
+    &#34;&#34;&#34;
+    A decorator for tracing methods&#39; begin/end execution points. Used for debugging
+    &#34;&#34;&#34;
+
+    def tracer(*args, **kwargs):
+        name = func.__name__
+        logging.debug(f&#39;{bcolors.HEADER}==&gt; Entering &#34;{name}&#34;{bcolors.ENDC}&#39;)
+        result = func(*args, **kwargs)
+        logging.debug(f&#39;{bcolors.HEADER}==&gt; Leaving &#34;{name}&#34;{bcolors.ENDC}&#39;)
+        return result
+
+    return tracer</code></pre>
+</details>
+</dd>
+</dl>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="IrohaUtils.bcolors"><code class="flex name class">
+<span>class <span class="ident">bcolors</span></span>
+</code></dt>
+<dd>
+<div class="desc"><p>A class to add colours to command line outputs. Useful for readability.</p>
+<p>Make sure to end your string with the ENDC colour, to avoid errors!</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class bcolors:
+    &#34;&#34;&#34;
+    A class to add colours to command line outputs. Useful for readability.
+
+    Make sure to end your string with the ENDC colour, to avoid errors!
+    &#34;&#34;&#34;
+    HEADER = &#39;\033[95m&#39;
+    OKBLUE = &#39;\033[94m&#39;
+    OKCYAN = &#39;\033[96m&#39;
+    OKGREEN = &#39;\033[92m&#39;
+    WARNING = &#39;\033[93m&#39;
+    FAIL = &#39;\033[91m&#39;
+    ENDC = &#39;\033[0m&#39;
+    BOLD = &#39;\033[1m&#39;
+    UNDERLINE = &#39;\033[4m&#39;</code></pre>
+</details>
+<h3>Class variables</h3>
+<dl>
+<dt id="IrohaUtils.bcolors.BOLD"><code class="name">var <span class="ident">BOLD</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="IrohaUtils.bcolors.ENDC"><code class="name">var <span class="ident">ENDC</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="IrohaUtils.bcolors.FAIL"><code class="name">var <span class="ident">FAIL</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="IrohaUtils.bcolors.HEADER"><code class="name">var <span class="ident">HEADER</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="IrohaUtils.bcolors.OKBLUE"><code class="name">var <span class="ident">OKBLUE</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="IrohaUtils.bcolors.OKCYAN"><code class="name">var <span class="ident">OKCYAN</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="IrohaUtils.bcolors.OKGREEN"><code class="name">var <span class="ident">OKGREEN</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="IrohaUtils.bcolors.UNDERLINE"><code class="name">var <span class="ident">UNDERLINE</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="IrohaUtils.bcolors.WARNING"><code class="name">var <span class="ident">WARNING</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3><a href="#header-functions">Functions</a></h3>
+<ul class="two-column">
+<li><code><a title="IrohaUtils.get_all_blocks" href="#IrohaUtils.get_all_blocks">get_all_blocks</a></code></li>
+<li><code><a title="IrohaUtils.get_block" href="#IrohaUtils.get_block">get_block</a></code></li>
+<li><code><a title="IrohaUtils.log_all_blocks" href="#IrohaUtils.log_all_blocks">log_all_blocks</a></code></li>
+<li><code><a title="IrohaUtils.new_user" href="#IrohaUtils.new_user">new_user</a></code></li>
+<li><code><a title="IrohaUtils.send_batch" href="#IrohaUtils.send_batch">send_batch</a></code></li>
+<li><code><a title="IrohaUtils.send_transaction" href="#IrohaUtils.send_transaction">send_transaction</a></code></li>
+<li><code><a title="IrohaUtils.trace" href="#IrohaUtils.trace">trace</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="IrohaUtils.bcolors" href="#IrohaUtils.bcolors">bcolors</a></code></h4>
+<ul class="two-column">
+<li><code><a title="IrohaUtils.bcolors.BOLD" href="#IrohaUtils.bcolors.BOLD">BOLD</a></code></li>
+<li><code><a title="IrohaUtils.bcolors.ENDC" href="#IrohaUtils.bcolors.ENDC">ENDC</a></code></li>
+<li><code><a title="IrohaUtils.bcolors.FAIL" href="#IrohaUtils.bcolors.FAIL">FAIL</a></code></li>
+<li><code><a title="IrohaUtils.bcolors.HEADER" href="#IrohaUtils.bcolors.HEADER">HEADER</a></code></li>
+<li><code><a title="IrohaUtils.bcolors.OKBLUE" href="#IrohaUtils.bcolors.OKBLUE">OKBLUE</a></code></li>
+<li><code><a title="IrohaUtils.bcolors.OKCYAN" href="#IrohaUtils.bcolors.OKCYAN">OKCYAN</a></code></li>
+<li><code><a title="IrohaUtils.bcolors.OKGREEN" href="#IrohaUtils.bcolors.OKGREEN">OKGREEN</a></code></li>
+<li><code><a title="IrohaUtils.bcolors.UNDERLINE" href="#IrohaUtils.bcolors.UNDERLINE">UNDERLINE</a></code></li>
+<li><code><a title="IrohaUtils.bcolors.WARNING" href="#IrohaUtils.bcolors.WARNING">WARNING</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.10.0</a>.</p>
+</footer>
+</body>
+</html>
