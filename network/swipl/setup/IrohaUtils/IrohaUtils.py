@@ -5,7 +5,15 @@ from pathlib import Path
 from google.protobuf.symbol_database import Default
 from iroha import IrohaCrypto, Iroha, IrohaGrpc, primitive_pb2
 
+if __name__ == "__main__":
+    logging.basicConfig(level=logging.DEBUG)
+
 class bcolors:
+    """
+    A class to add colours to command line outputs. Useful for readability.
+
+    Make sure to end your string with the ENDC colour, to avoid errors!
+    """
     HEADER = '\033[95m'
     OKBLUE = '\033[94m'
     OKCYAN = '\033[96m'
@@ -53,7 +61,7 @@ net_4 = IrohaGrpc('{}:{}'.format(IROHA_HOST_ADDR_4, IROHA_PORT_4), timeout=10)
 
 def trace(func):
     """
-    A decorator for tracing methods' begin/end execution points
+    A decorator for tracing methods' begin/end execution points. Used for debugging
     """
 
     def tracer(*args, **kwargs):
@@ -66,7 +74,7 @@ def trace(func):
     return tracer
 
 
-@trace
+# @trace
 def send_transaction(transaction, connection=net_1, verbose=False):
     """Send a transaction across a network to a peer and return the final status
     Verbose mode intended mainly for manual transaction sending and testing
@@ -93,7 +101,7 @@ def send_transaction(transaction, connection=net_1, verbose=False):
         last_status = status
     return last_status
 
-@trace
+# @trace
 def send_batch(transactions, connection=net_1, verbose=False):
     """Send a batch of transactions across a connection, all at once
 
@@ -118,7 +126,7 @@ def send_batch(transactions, connection=net_1, verbose=False):
         last_status_list.append(last_status)
     return last_status_list
 
-@trace
+# @trace
 def get_block(block_number, connection=net_1):
     """Get the block at height block_number from the node specified by connection 
 
@@ -139,7 +147,7 @@ def get_block(block_number, connection=net_1):
 
     return block
 
-@trace
+# @trace
 def get_all_blocks(connection=net_1):
     """Get all blocks from a connection
 
@@ -162,7 +170,7 @@ def get_all_blocks(connection=net_1):
     logging.debug(f"END OF CHAIN REACHED")
     return block_json
 
-@trace
+# @trace
 def log_all_blocks(log_name, logs_directory="logs", connection=net_1):
     """Get all blocks from a node and write them to a log file in JSON format
 
@@ -182,9 +190,6 @@ def log_all_blocks(log_name, logs_directory="logs", connection=net_1):
     with open(path, "w+") as f:
         for block in block_json:
             f.write(str(block)+"\n\n")
-
-if __name__ == "__main__":
-    logging.basicConfig(level=logging.DEBUG)
 
 def new_user(user_name, domain_name):
     """

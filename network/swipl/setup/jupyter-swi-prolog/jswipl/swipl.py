@@ -109,7 +109,7 @@ def magic_consult_file(code):
     output = []
     prolog = Prolog()
     if not REDIS:
-        return f"Cannot consult with REDIS being set! Current {REDIS=}", False
+        return f"Cannot consult with REDIS being set! Current {REDIS=}, should be 1", False
     for line in code.split("\n"):
         # Ignore any comments or blank lines
         if line == "" or line[0] == "%": continue

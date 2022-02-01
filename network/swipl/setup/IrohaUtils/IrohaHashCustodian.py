@@ -9,15 +9,17 @@ class BlockStorehouse():
     This will allow for a speed up as we will not need to query the same low height blocks over and over
     """
 
-    @trace
     def __init__(self, hashing_domain_suffix, thread_mode, conn=net_1):
         """
         Set the variables for the blockstore and create a new connection that will not time out
 
         Args:
             hashing_domain_suffix (String): The suffix to domain names marking a domain holding hashes
-            threading (boolean): Set whether threading should be used or not
+            threading (boolean): 
+                Set whether threading should be used or not.
+                
                 If threading is used (True) then a new thread is spawned that subscribes to block updates. Note this can slow down execution!
+                
                 If threading is not used (False) then each request to the chain causes the blockstore to update all at once
                     This removes threads but makes a request after a long delay quite slow
             conn (IrohaGrpc, optional): The connection to copy to the block store. Defaults to net_1.
@@ -42,7 +44,7 @@ class BlockStorehouse():
             self._listen_thread.start()
         # If we are not threading, do not start a thread 
 
-    @trace
+    
     def destroy(self):
         """
         Destroy this storehouse, safely cleaning up the threads (if any) and ensuring memory is released
@@ -56,10 +58,11 @@ class BlockStorehouse():
         self.world_state = None
         return None
 
-    @trace
+    
     def parse_block(self, block):
         """
-        Parse a block from the network, extracting hashes and storing in world_state
+        Parse a block from the network, extracting hashes and storing in world_state.
+
         Also increases current height tracker
         """
 
@@ -90,12 +93,12 @@ class BlockStorehouse():
         with self._current_height_lock:
             self.current_height+=1
 
-    @trace
+    
     def collect_hashes(self):
         """
-        Collect all the blocks from current_height to most recent in one swoop
-        If threading, note that this method blocks execution as the storehouse, and should only be run at start up
-            Once this method has completed, then the asynchronous polling can occur
+        Collect all the blocks from current_height to most recent in one swoop.  
+
+        If threading, note that this method blocks execution as the storehouse, and should only be run at start up. Once this method has completed, then the asynchronous polling can occur.  
 
         If not threading, this method is called at each request to allow the storehouse to catch up
         """
@@ -105,7 +108,7 @@ class BlockStorehouse():
             logging.debug(f"Got block at height {self.current_height}")
             self.parse_block(current_block)
 
-    @trace
+    
     def listen_for_blocks(self):
         """
         Subscribe to blocks stream from the network
@@ -151,7 +154,7 @@ class Custodian():
     Offering the ability to get hashes of a file, store hashes on the chain, and find hashes on the chain
     """
 
-    @trace
+    
     def __init__(self, hashing_domain_suffix="-hash", 
             default_domain_name="hashing", 
             hashing_role_name="hash_creator", 
@@ -200,7 +203,7 @@ class Custodian():
         logging.debug(status)
             
 
-    @trace
+    
     def destroy(self):
         """
         Destroy this custodian. Remove the blockstore (if any) and return None
@@ -215,7 +218,7 @@ class Custodian():
 
         return None
 
-    @trace
+    
     def new_hashing_user(self, user_name):
         """
         Create a new user capable of hashing to the blockchain, also commits user onto chain
@@ -238,7 +241,7 @@ class Custodian():
         logging.debug(status)
         return user
 
-    @trace
+    
     def get_file_hash(self, filename):
         """
         Generate and return the MD5 hex digest of the contents of a file
@@ -257,7 +260,7 @@ class Custodian():
         logging.debug(h.hexdigest())
         return h.hexdigest()
 
-    @trace
+    
     def get_hash(self, obj):
         """
         Get the hash digest of an object
@@ -293,7 +296,7 @@ class Custodian():
         return domain_name
 
 
-    @trace
+    
     def _admin_create_domain(self, domain_name):
         """
         Create a new domain, according to admins specifications
@@ -324,7 +327,7 @@ class Custodian():
         # Domain will always exist, look into False case later
         return True
 
-    @trace
+    
     def store_hash_on_chain(self, user, h, domain_name=None, connection=net_1):
         """
         Take the hex digest of a message and store this on the blockchain as the name of an asset
@@ -361,7 +364,7 @@ class Custodian():
         logging.debug(status)
         return status
 
-    @trace
+    
     def find_hash_on_chain(self, user, h, domain_name=None, connection=net_1):
         """
         Given the hex digest of a message, attempt to find this hash on the blockchain
@@ -388,7 +391,7 @@ class Custodian():
         #Check if response has an asset id matching the hash we are after
         return response.asset_response.asset.asset_id==f"{h}#{domain_name}"
 
-    @trace
+    
     def get_domain_hashes(self, domain_name=None):
         """
         Consult the blockstore about the domain in question
