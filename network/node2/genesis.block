@@ -42,6 +42,7 @@
                           "createRole":{
                              "roleName":"admin",
                              "permissions":[
+                                "root",
                                 "can_add_peer",
                                 "can_add_signatory",
                                 "can_create_account",
