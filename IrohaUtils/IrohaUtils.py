@@ -2,7 +2,7 @@ import os
 import binascii
 import logging
 from pathlib import Path
-from iroha import IrohaCrypto, Iroha, IrohaGrp
+from iroha import IrohaCrypto, Iroha, IrohaGrpc
 
 if __name__ == "__main__":
     logging.basicConfig(level=logging.DEBUG)
