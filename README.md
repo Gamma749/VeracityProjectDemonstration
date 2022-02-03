@@ -15,6 +15,6 @@ Ensure that your machine runs docker and docker-compose.
 
 - The script will drop into the logs of the jupyter notebook server, which will eventually (after some startup) give a link to follow (like `http://127.0.0.1:8888/...`)
 
-- Open this link in your preferred browser and navigate to `demonstration.ipynb`
+- Open this link in your preferred browser and navigate to `introduction.ipynb`
 
 - Once finished, run `./manage-network down` to destroy the containers
