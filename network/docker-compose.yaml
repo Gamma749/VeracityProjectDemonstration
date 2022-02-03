@@ -200,8 +200,6 @@ services:
     # image: gamma749/iroha-swipl-notebook
     build: swipl/.
     container_name: swipl-notebook
-    env_file:
-      - swipl/swipl.env
     entrypoint: run-notebook
     networks:
       iroha-network:

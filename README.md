@@ -14,7 +14,6 @@ Ensure that your machine runs docker and docker-compose.
     - Four Iroha containers (with a postgres container each) will form the blockchain infrastructure, while a redis container and a jupyter notebook server will form the front end
 
 - The script will drop into the logs of the jupyter notebook server, which will eventually (after some startup) give a link to follow (like `http://127.0.0.1:8888/...`)
-  - Note that the notebook server will use the password specified in `network/swipl/swipl.env`. In this repository this is currently set to no password which is very insecure! If you want to add a password to your server, please alter this file before running `manage-network up`
 
 - Open this link in your preferred browser and navigate to `introduction.ipynb`
 
