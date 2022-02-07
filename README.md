@@ -18,3 +18,21 @@ Ensure that your machine runs docker and docker-compose.
 - Open this link in your preferred browser and navigate to `introduction.ipynb`
 
 - Once finished, run `./manage-network down` to destroy the containers
+
+## If deploying this project to a cloud instance, please follow the steps below
+- run `scp -i <private-key-file> -r . ubuntu@<ip>:/home/ubuntu` (or similar for other distros)
+- move to the cloud instance with `ssh -i <private-key-file> ubuntu@<ip>`
+- run the following commands to set up the instance with docker and docker compose:
+	- `sudo apt-get update`
+	- `sudo apt-get install docker.io`
+	- `sudo curl -L "https://github.com/docker/compose/releases/download/v2.2.3/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose`
+	- `sudo chmod +x /usr/local/bin/docker-compose`
+- Get a super user shell `sudo -s`
+- Run `/home/ubuntu/manage-network up`
+
+If you want to reset the notebooks each day, I recommend using a crontab to script this. I found the best settings were to add to the sudo crontab something like:
+```
+55 23 * * * /home/ubuntu/manage-network.sh down
+59 23 * * * /home/ubuntu/restore-notebook-copy.sh
+0 0 * * * /home/ubuntu/manage-network.sh up
+```
