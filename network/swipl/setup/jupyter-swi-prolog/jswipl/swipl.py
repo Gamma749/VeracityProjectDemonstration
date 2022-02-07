@@ -246,10 +246,13 @@ def exec_prolog_code(code):
                 clauses.insert(0, f"% {timestamp}")
             logging.debug(clauses)
             f.write('\n'.join(clauses))
+            logging.debug(f"File {cell_file_name} written")
         finally:
             # Close the file and consult it
             f.close()
+            logging.debug("Consulting file")
             prolog.consult(f.name)
+            logging.debug("File consulted")
         # If vital to never put hash on twice, check first
         # Iroha does this for us though
         # Get the file hash
